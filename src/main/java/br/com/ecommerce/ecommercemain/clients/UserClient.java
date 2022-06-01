@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 //@LoadBalancerClient(name = "users")
 public interface UserClient {
     @PostMapping("/login")
-    @CircuitBreaker(name = "servico")
+//    @CircuitBreaker(name = "servico")
     UserResponseDTO login(@RequestBody UserLoginDTO userLoginDTO);
 
     @PostMapping("/save")
-    @CircuitBreaker(name = "servico")
+//    @CircuitBreaker(name = "servico")
     void save(@RequestBody UserSaveDTO userSaveDTO);
 }
