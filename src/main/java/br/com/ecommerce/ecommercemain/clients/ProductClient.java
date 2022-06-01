@@ -10,6 +10,6 @@ import java.util.List;
 @FeignClient(name = "products")
 public interface ProductClient {
     @GetMapping
-    @CircuitBreaker(name = "servico")
+//    @CircuitBreaker(name = "servico")
     List<ProductDTO> getAllProducts();
 }

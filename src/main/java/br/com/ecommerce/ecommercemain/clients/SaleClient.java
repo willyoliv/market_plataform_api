@@ -16,11 +16,11 @@ import java.util.UUID;
 public interface SaleClient {
 
     @PostMapping
-    @CircuitBreaker(name = "servico")
+//    @CircuitBreaker(name = "servico")
     SalesResponseDTO save(@RequestBody SalesRequestDTO salesRequestDTO);
 
     @GetMapping(path = "/find-by-user-code/{userCode}")
-    @CircuitBreaker(name = "servico")
+//    @CircuitBreaker(name = "servico")
     List<SalesResponseDTO> findByUserCode(@PathVariable("userCode") UUID userCode);
 
 }
