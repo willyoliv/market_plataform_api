@@ -15,11 +15,11 @@ import java.util.UUID;
 //@LoadBalancerClient(name = "sales")
 public interface SaleClient {
 
-    @PostMapping
+    @PostMapping(path = "sales")
 //    @CircuitBreaker(name = "servico")
     SalesResponseDTO save(@RequestBody SalesRequestDTO salesRequestDTO);
 
-    @GetMapping(path = "/find-by-user-code/{userCode}")
+    @GetMapping(path = "sales/find-by-user-code/{userCode}")
 //    @CircuitBreaker(name = "servico")
     List<SalesResponseDTO> findByUserCode(@PathVariable("userCode") UUID userCode);
 
