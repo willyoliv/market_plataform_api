@@ -44,7 +44,7 @@ public class MarketPlataformController {
         return new ResponseEntity<>("User saved", HttpStatus.CREATED);
     }
 
-    @GetMapping("/products/")
+    @GetMapping("/products")
     public ResponseEntity<List<ProductDTO>> getAllProducts() {
         return new ResponseEntity<>(productClient.getAllProducts(), HttpStatus.OK);
     }
