@@ -19,7 +19,7 @@ import java.util.UUID;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("/")
 public class MarketPlataformController {
 
     private final UserClient userClient;
@@ -27,6 +27,11 @@ public class MarketPlataformController {
     private final ProductClient productClient;
 
     private final SaleClient saleClient;
+
+    @GetMapping
+    public ResponseEntity<String> info() {
+        return ResponseEntity.ok("MARKETPLATAFORM - API");
+    }
 
     @PostMapping("/users/login")
     public ResponseEntity<UserResponseDTO> login(@RequestBody UserLoginDTO userLoginDTO) {
