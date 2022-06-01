@@ -14,7 +14,7 @@ public interface UserClient {
 //    @CircuitBreaker(name = "servico")
     UserResponseDTO login(@RequestBody UserLoginDTO userLoginDTO);
 
-    @PostMapping("/v1/user/save")
+    @PostMapping("/v1/user")
 //    @CircuitBreaker(name = "servico")
     void save(@RequestBody UserSaveDTO userSaveDTO);
 }
