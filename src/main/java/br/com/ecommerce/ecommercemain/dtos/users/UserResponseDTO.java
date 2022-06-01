@@ -1,4 +1,4 @@
-package br.com.ecommerce.ecommercemain.dtos;
+package br.com.ecommerce.ecommercemain.dtos.users;
 
 import java.util.UUID;
 

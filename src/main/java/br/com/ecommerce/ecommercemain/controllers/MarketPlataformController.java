@@ -3,10 +3,11 @@ package br.com.ecommerce.ecommercemain.controllers;
 import br.com.ecommerce.ecommercemain.clients.ProductClient;
 import br.com.ecommerce.ecommercemain.clients.SaleClient;
 import br.com.ecommerce.ecommercemain.clients.UserClient;
-import br.com.ecommerce.ecommercemain.dtos.ProductDTO;
-import br.com.ecommerce.ecommercemain.dtos.UserLoginDTO;
-import br.com.ecommerce.ecommercemain.dtos.UserResponseDTO;
-import br.com.ecommerce.ecommercemain.dtos.UserSaveDTO;
+import br.com.ecommerce.ecommercemain.dtos.products.ProductDTO;
+import br.com.ecommerce.ecommercemain.dtos.users.UserLoginDTO;
+import br.com.ecommerce.ecommercemain.dtos.users.UserLoginResponseDTO;
+import br.com.ecommerce.ecommercemain.dtos.users.UserResponseDTO;
+import br.com.ecommerce.ecommercemain.dtos.users.UserSaveDTO;
 import br.com.ecommerce.ecommercemain.dtos.sales.SalesRequestDTO;
 import br.com.ecommerce.ecommercemain.dtos.sales.SalesResponseDTO;
 import lombok.RequiredArgsConstructor;
@@ -39,9 +40,8 @@ public class MarketPlataformController {
     }
 
     @PostMapping("/users/save")
-    public ResponseEntity<String> saveUser(@RequestBody UserSaveDTO userSaveDTO) {
-        userClient.save(userSaveDTO);
-        return new ResponseEntity<>("User saved", HttpStatus.CREATED);
+    public ResponseEntity<UserLoginResponseDTO> saveUser(@RequestBody UserSaveDTO userSaveDTO) {
+        return new ResponseEntity<>(userClient.save(userSaveDTO), HttpStatus.CREATED);
     }
 
     @GetMapping("/products")

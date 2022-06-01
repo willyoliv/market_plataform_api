@@ -1,9 +1,9 @@
-package br.com.ecommerce.ecommercemain.dtos;
+package br.com.ecommerce.ecommercemain.dtos.products;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public record ProductDTO(
+public record ProductDTO(Long id,
                          UUID productCode,
                          String name,
                          String description,
