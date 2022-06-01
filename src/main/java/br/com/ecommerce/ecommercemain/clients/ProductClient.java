@@ -9,7 +9,7 @@ import java.util.List;
 @FeignClient(name = "products")
 //@LoadBalancerClient(name = "products")
 public interface ProductClient {
-    @GetMapping
+    @GetMapping(path="products")
 //    @CircuitBreaker(name = "servico")
     List<ProductDTO> getAllProducts();
 }
