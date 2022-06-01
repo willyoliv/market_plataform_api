@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name="users")
-@LoadBalancerClient(name = "users")
+//@LoadBalancerClient(name = "users")
 public interface UserClient {
     @PostMapping("/login")
     @CircuitBreaker(name = "servico")

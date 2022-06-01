@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @FeignClient(name = "products")
-@LoadBalancerClient(name = "products")
+//@LoadBalancerClient(name = "products")
 public interface ProductClient {
     @GetMapping
     @CircuitBreaker(name = "servico")

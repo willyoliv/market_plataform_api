@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @FeignClient(name = "sales")
-@LoadBalancerClient(name = "sales")
+//@LoadBalancerClient(name = "sales")
 public interface SaleClient {
 
     @PostMapping
