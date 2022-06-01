@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +17,7 @@ public interface SaleClient {
 
     @PostMapping
     @CircuitBreaker(name = "servico")
-    SalesResponseDTO save(SalesRequestDTO salesRequestDTO);
+    SalesResponseDTO save(@RequestBody SalesRequestDTO salesRequestDTO);
 
     @GetMapping(path = "/find-by-user-code/{userCode}")
     @CircuitBreaker(name = "servico")
